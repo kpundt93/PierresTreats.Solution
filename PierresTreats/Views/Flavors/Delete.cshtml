@@ -1,0 +1,13 @@
+@model PierresTreats.Models.Flavor
+
+<h2>Delete</h2>
+<hr />
+<h3>Are you sure you want to delete this flavor?</h3>
+<h4>Flavor: @Html.DisplayFor(m => m.Description)</h4>
+@using (Html.BeginForm())
+{
+  <button type="submit" value="Yes" class="btn btn-success">Yes</button>
+}
+
+@Html.ActionLink("Back to flavors", "Index")
+@Html.ActionLink("Home", "Index", "Home")
