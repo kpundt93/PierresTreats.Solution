@@ -1,0 +1,25 @@
+@model PierresTreats.Models.Flavor
+
+<h2>Flavor Details</h2>
+<hr />
+<h3>Flavor: @Html.DisplayFor(m => m.Description)</h3>
+
+@if (@Model.JoinEntities.Count == 0)
+{
+  <p>Sorry! No treats with this flavor could be found.</p>
+}
+else
+{
+  <h4>Treats with this flavor:</h4>
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Treat.Name</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to flavors", "Index")</p>
+<p>@Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Delete flavor", "Delete", new { id = Model.FlavorId})</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
