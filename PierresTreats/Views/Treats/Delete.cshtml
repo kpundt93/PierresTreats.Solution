@@ -1,0 +1,13 @@
+@model PierresTreats.Models.Treat
+
+<h2>Delete</h2>
+<hr />
+<h3>Are you sure you want to delete this treat?</h3>
+<h4>Treat: @Html.DisplayFor(m => m.Name)</h4>
+@using (Html.BeginForm())
+{
+  <button type="submit" value="Yes" class="btn btn-success">Yes</button>
+}
+
+@Html.ActionLink("Back to treats", "Index")
+@Html.ActionLink("Home", "Index", "Home")
