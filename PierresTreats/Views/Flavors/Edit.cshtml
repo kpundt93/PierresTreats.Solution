@@ -1,0 +1,17 @@
+@model PierresTreats.Models.Flavor
+
+<h2>Edit</h2>
+<hr />
+<h3>Edit this flavor: @Html.DisplayFor(m => m.Description)</h3>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(m => m.FlavorId);
+
+  @Html.LabelFor(m => m.Description)
+  @Html.TextBoxFor(m => m.Description)
+  <input type="submit" value="Add new flavor" />
+}
+
+<p>@Html.ActionLink("Back to flavors", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
