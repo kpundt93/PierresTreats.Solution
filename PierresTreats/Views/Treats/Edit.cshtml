@@ -1,0 +1,22 @@
+@model PierresTreats.Models.Treat
+
+<h2>Edit</h2>
+<hr />
+<h3>Edit this treat: @Html.DisplayFor(m => m.Name)</h3>
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(m => m.TreatId)
+
+  @Html.LabelFor(m => m.Name)
+  @Html.TextBoxFor(m => m.Name)
+
+  @Html.LabelFor(m => m.Description)
+  @Html.TextBoxFor(m => m.Description)
+
+  @Html.Label("Select flavor")
+  @Html.DropDownList("FlavorId")
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
