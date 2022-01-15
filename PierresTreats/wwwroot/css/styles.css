@@ -16,3 +16,12 @@
 #nav-li-2 {
   margin-left: auto;
 }
+
+h1 {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+#treats, #flavors {
+  padding-bottom: 1em;
+}

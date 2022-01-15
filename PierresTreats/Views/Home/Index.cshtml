@@ -1,34 +1,45 @@
 @using PierresTreats.Models;
 
-<h1>Welcome to Pierre's Sweet and Savory Treats!</h1>
+<div class="row">
+  <div class="col" id="treats">
+    <h2>Available Treats</h2>
+    @if(((List<PierresTreats.Models.Treat>)ViewData["treats"]).Count == 0)
+    {
+      <p>No treats are available right now!</p>
+    }
+    else
+    {
+      @foreach (Treat treat in (List<PierresTreats.Models.Treat>)ViewData["treats"])
+      {
+        <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+      }
+    }
+  </div>
+  <div class="col" id="flavors">
+    <h2>Available Flavors</h2>
+    @if(((List<PierresTreats.Models.Flavor>)ViewData["flavors"]).Count == 0)
+    {
+      <p>No flavors are available right now!</p>
+    }
+    else
+    {
+      @foreach (Flavor flavor in (List<PierresTreats.Models.Flavor>)ViewData["flavors"])
+      {
+        <li>@Html.ActionLink($"{flavor.Description}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+      }
+    }
 
-<h3>Available Treats</h3>
-@if(((List<PierresTreats.Models.Treat>)ViewData["treats"]).Count == 0)
-{
-  <p>No treats are available right now!</p>
-}
-else
-{
-  @foreach (Treat treat in (List<PierresTreats.Models.Treat>)ViewData["treats"])
-  {
-    <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
-  }
-}
-
-<h3>Available Flavors</h3>
-@if(((List<PierresTreats.Models.Flavor>)ViewData["flavors"]).Count == 0)
-{
-  <p>No flavors are available right now!</p>
-}
-else
-{
-  @foreach (Flavor flavor in (List<PierresTreats.Models.Flavor>)ViewData["flavors"])
-  {
-    <li>@Html.ActionLink($"{flavor.Description}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
-  }
-}
-
-<p>@Html.ActionLink("See all treats", "Index", "Treats")</p>
-<p>@Html.ActionLink("See all flavors", "Index", "Flavors")</p>
-<p>@Html.ActionLink("Log in", "Login", "Account")</p>
-<p>@Html.ActionLink("Create an account", "Index", "Account")</p>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col">
+    <p>@Html.ActionLink("See all treats", "Index", "Treats")</p>
+  </div>
+  <div class="col">
+    <p>@Html.ActionLink("See all flavors", "Index", "Flavors")</p>
+  </div>
+  <div class="col">
+    <p>@Html.ActionLink("Create an account", "Index", "Account")</p>
+  </div>
+</div>

@@ -5,7 +5,6 @@
 {
   @Html.LabelFor(m => m.Description)
   @Html.TextBoxFor(m => m.Description)
-  <input type="submit" value="Add new flavor" />
+  <br>
+  <button type="submit" value="Add new flavor" class="btn btn-primary">Add</button>
 }
-<p>@Html.ActionLink("Show all flavors", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
