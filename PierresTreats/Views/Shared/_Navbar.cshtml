@@ -1,0 +1,25 @@
+<nav id="banner">
+  <ul id="nav-ul">
+    <li id="nav-li-2">
+      <p>@Html.ActionLink("Home", "Index", "Home")</p>
+    </li>
+    <li>  
+      <p>@Html.ActionLink("Flavors", "Index", "Flavors")</p>
+    </li>
+    <li> 
+      <p>@Html.ActionLink("Treats", "Index", "Treats")</p>
+    </li>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <li>
+        <p>@Html.ActionLink("Log out", "LogOff", "Account")</p>
+      </li>
+    }
+    else
+    {
+    <li>
+      <p>@Html.ActionLink("Log in", "Login", "Account")</p>
+    </li>
+    }
+  </ul>
+</nav>
