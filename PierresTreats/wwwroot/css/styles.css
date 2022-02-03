@@ -24,4 +24,17 @@ h1 {
 
 #treats, #flavors {
   padding-bottom: 1em;
+  text-align: center;
+}
+
+#links {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#links p {
+  padding-right: 1em;
 }
